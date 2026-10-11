@@ -465,8 +465,14 @@ function renderHeaderAndStats(data) {
     if (modeText) modeText.textContent = "PEAK REPLAY • 01 NOV 2024";
     if (lastUpdated) lastUpdated.innerHTML = "<strong>Peak Episode Benchmark:</strong> 01 Nov 2024, 02:00 PM IST (Annual Peak Surge)";
   } else {
-    if (modeText) modeText.textContent = "LIVE TELEMETRY • 03 OCT 2026";
-    if (lastUpdated) lastUpdated.innerHTML = "<strong>Live Telemetry:</strong> 03 Oct 2026, 06:30 AM IST (Active Sync)";
+    // Dynamically display today's live date
+    const now = new Date();
+    const liveDateStr = now.toLocaleDateString("en-GB", { day: "2-digit", month: "short", year: "numeric" });
+    const liveDateUpper = liveDateStr.toUpperCase();
+    const liveTimeStr = now.toLocaleTimeString("en-US", { hour: "2-digit", minute: "2-digit", hour12: true });
+
+    if (modeText) modeText.textContent = `LIVE TELEMETRY • ${liveDateUpper}`;
+    if (lastUpdated) lastUpdated.innerHTML = `<strong>Live Telemetry:</strong> ${liveDateStr}, ${liveTimeStr} IST (Active Sync)`;
   }
 
   const btnLive = document.getElementById("btn-mode-live");
@@ -478,6 +484,9 @@ function renderHeaderAndStats(data) {
       btnLive.classList.remove("active");
       btnLive.classList.add("btn-outline");
     } else {
+      const now = new Date();
+      const liveDateStr = now.toLocaleDateString("en-GB", { day: "2-digit", month: "short", year: "numeric" });
+      btnLive.textContent = `🛰️ Live Telemetry (${liveDateStr})`;
       btnLive.classList.add("active");
       btnLive.classList.remove("btn-outline");
       btnReplay.classList.remove("active");

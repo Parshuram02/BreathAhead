@@ -1,4 +1,4 @@
-"""Configuration and constants for Saans stubble fire early warning system."""
+"""Configuration and constants for BreathAhead stubble fire early warning system."""
 
 # Punjab + Haryana bounding box
 BBOX = {
