@@ -215,12 +215,12 @@ def run_backtest():
 
     # Print summary to console
     print("\n=======================================================")
-    print("        SAANS BACK-TEST EVALUATION RESULTS            ")
+    print("     BREATHAHEAD BACK-TEST EVALUATION RESULTS         ")
     print(f"       Evaluated on {len(details)} test days (2024 & 2025)       ")
     print("=======================================================")
     print(f"{'Method':<32} {'Precision@50':<16} {'Recall@50':<16}")
     print("-" * 64)
-    print(f"{'Saans Combined (Ours)':<32} {mean_p_saans * 100:.1f}%{'':<10} {mean_r_saans * 100:.1f}%")
+    print(f"{'BreathAhead Combined (Ours)':<32} {mean_p_saans * 100:.1f}%{'':<10} {mean_r_saans * 100:.1f}%")
     print(f"{'Yesterday Fires (Persistence)':<32} {mean_p_yest * 100:.1f}%{'':<10} {mean_r_yest * 100:.1f}%")
     print(f"{'History Only (Climatology)':<32} {mean_p_hist * 100:.1f}%{'':<10} {mean_r_hist * 100:.1f}%")
     print("=======================================================")

@@ -99,7 +99,7 @@ def get_replay_fires(as_of_str: str) -> list[dict]:
 
 def run_pipeline(as_of: str | None = None):
     print("=" * 65)
-    print("        SAANS — STUBBLE FIRE EARLY WARNING PIPELINE          ")
+    print("      BREATHAHEAD — STUBBLE FIRE EARLY WARNING PIPELINE       ")
     print("=" * 65)
 
     mode = "replay" if as_of else "live"
@@ -208,7 +208,7 @@ def run_pipeline(as_of: str | None = None):
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Run Saans Early Warning Pipeline locally.")
+    parser = argparse.ArgumentParser(description="Run BreathAhead Early Warning Pipeline locally.")
     parser.add_argument(
         "--as-of",
         dest="as_of",
