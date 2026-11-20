@@ -1,4 +1,5 @@
 {
+  "name": "breathahead",
   "outputDirectory": "web",
   "cleanUrls": true
 }

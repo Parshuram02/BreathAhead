@@ -1,0 +1,8 @@
+{
+  "name": "breathahead",
+  "version": "1.0.0",
+  "description": "BreathAhead — Stubble Fire Risk & Smoke Transport Intelligence for Delhi-NCR",
+  "scripts": {
+    "start": "python -m http.server 8000 --directory web"
+  }
+}
