@@ -1,0 +1,9 @@
+backend/
+data/history_raw.csv
+scripts/
+tests/
+.env*
+*.py
+*.pyc
+__pycache__/
+.pytest_cache/
