@@ -1,9 +1,9 @@
 requirements.txt
-backend/
-core/
-data/
-scripts/
-tests/
+/backend
+/core
+/scripts
+/tests
+/data/history_raw.csv
 .env*
 *.py
 *.pyc
@@ -12,5 +12,5 @@ Makefile
 *.md
 nginx.conf
 youtube_thumbnail.jpg
-__pycache__/
-.pytest_cache/
+__pycache__
+.pytest_cache
