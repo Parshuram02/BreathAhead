@@ -2,6 +2,8 @@
 
 <div align="center">
 
+[![Live Demo](https://img.shields.io/badge/Live%20Dashboard-breathahead--web.vercel.app-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://breathahead-web.vercel.app/)
+
 [![Python](https://img.shields.io/badge/Python-3.12-3776AB?logo=python&logoColor=white)](https://www.python.org/)
 [![NASA FIRMS](https://img.shields.io/badge/Data-NASA%20VIIRS%20375m-E03C31?logo=nasa&logoColor=white)](https://firms.modaps.eosdis.nasa.gov/)
 [![AWS](https://img.shields.io/badge/Cloud-AWS%20EC2%20%2B%20Serverless%20SAM-FF9900?logo=amazon-aws&logoColor=white)](https://aws.amazon.com/)
@@ -11,6 +13,8 @@
 
 **Know what is coming. Before it arrives.**  
 *Transforming near-real-time satellite thermal telemetry and atmospheric wind fields into 12–24 hour pre-emptive smoke warnings, sector arrival ETAs, and automated school safety protocols for Delhi-NCR.*
+
+> 🚀 **Public Live URL:** [https://breathahead-web.vercel.app/](https://breathahead-web.vercel.app/)
 
 </div>
 
@@ -266,7 +270,11 @@ tests/test_smoke.py::test_smoke_distance_cutoff PASSED
 
 ## ☁️ Cloud Deployment
 
-### Option A: Amazon EC2 + Nginx (Production Dashboard)
+### Option A: Vercel Production Web Deployment (Live)
+The production interactive dashboard is hosted and live on Vercel:
+* **Live Dashboard URL:** [https://breathahead-web.vercel.app/](https://breathahead-web.vercel.app/)
+
+### Option B: Amazon EC2 + Nginx (Self-Hosted Production Dashboard)
 The web application and telemetry pipelines run smoothly on an Ubuntu `t2.micro` or `t3.micro` EC2 instance:
 
 ```bash
@@ -277,20 +285,20 @@ ssh -i /path/to/key.pem ubuntu@<EC2-PUBLIC-IP>
 sudo apt update && sudo apt install -y python3-pip python3-venv nginx git
 
 # 3. Clone and configure webroot
-git clone https://github.com/Parshuram02/Saans-.git saans
-sudo mkdir -p /var/www/saans
-sudo cp -r ~/saans/web/* /var/www/saans/
+git clone https://github.com/Parshuram02/BreathAhead.git breathahead
+sudo mkdir -p /var/www/breathahead
+sudo cp -r ~/breathahead/web/* /var/www/breathahead/
 
 # 4. Apply Nginx configuration
-sudo cp ~/saans/nginx.conf /etc/nginx/sites-available/saans
+sudo cp ~/breathahead/nginx.conf /etc/nginx/sites-available/breathahead
 sudo rm /etc/nginx/sites-enabled/default
-sudo ln -s /etc/nginx/sites-available/saans /etc/nginx/sites-enabled/
+sudo ln -s /etc/nginx/sites-available/breathahead /etc/nginx/sites-enabled/
 sudo nginx -t && sudo systemctl reload nginx
 ```
 
 Access your public IP: `http://<EC2-PUBLIC-IP>`.
 
-### Option B: AWS Serverless SAM Deployment
+### Option C: AWS Serverless SAM Deployment
 Deploy the scalable cloud-native backend using AWS SAM:
 
 ```bash
@@ -326,7 +334,7 @@ The system sends concise alerts formatted for immediate readability:
 ```text
 🚨 [BreathAhead CODE RED] Anand Vihar: Stubble smoke from 179 upwind fires 
 arriving in ~12h. Cancel morning outdoor assembly; shift junior classes to hybrid. 
-Live forecast: https://breathahead.app
+Live forecast: https://breathahead-web.vercel.app/
 ```
 
 Full SMS setup documentation and implementation details are available in [TWILIO_SMS_PLAN.md](file:///c:/Users/prash/Desktop/Projects/delhi/TWILIO_SMS_PLAN.md).
