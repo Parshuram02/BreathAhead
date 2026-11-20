@@ -1,5 +1,7 @@
 {
   "name": "breathahead",
+  "framework": null,
+  "buildCommand": null,
   "outputDirectory": "web",
   "cleanUrls": true
 }

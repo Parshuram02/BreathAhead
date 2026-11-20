@@ -1,9 +1,16 @@
+requirements.txt
 backend/
-data/history_raw.csv
+core/
+data/
 scripts/
 tests/
 .env*
 *.py
 *.pyc
+*.bat
+Makefile
+*.md
+nginx.conf
+youtube_thumbnail.jpg
 __pycache__/
 .pytest_cache/
